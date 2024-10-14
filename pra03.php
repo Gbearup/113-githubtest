@@ -127,16 +127,15 @@ for($i=0; $i<5 ; $i++){
 
 ?>
 
-
-<h2> 菱形 </h2>
+<h2> 菱形對角線 </h2>
  <?php 
- 
-for($i=0; $i<9 ; $i++){
-    if($i>4){
-        $k1=$i-4;
-        $j1=2*($i-(2*($i-4)))+1;
+$size = 21;
+for($i=0; $i<floor($size/2) ; $i++){
+    if($i>10){
+        $k1=$i-$floor(size/2);
+        $j1=2*($i-(2*($i-$floor(size/2))))+1;
     }else{
-        $k1=4-$i;
+        $k1=floor($size/2)-$i;
         $j1=(2*$i+1);
     }
 
@@ -151,6 +150,9 @@ for($i=0; $i<9 ; $i++){
 }
 
 ?>
+
+
+
 
 
 
@@ -211,11 +213,79 @@ for ($i=0;$i<6;$i++){
 ?>
 
 
+<h2> 矩形練習-代數版 </h2>
+ <?php 
+
+ $width=10;
+
+for ($i=0;$i<$width;$i++){
+    for ($j=0;$j<$width;$j++){
+        if($i==0 || $i==$width-1){
+            echo "*";  
+        }else if ($j==0 || $j==$width-1){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
+?>
+
+
+<h2> 矩形含對角線練習-代數版 </h2>
+ <?php 
+
+ $width=10;
+for ($i=0;$i<$width;$i++){
+    for ($j=0;$j<$width;$j++){
+        if($i==0 || $i==$width-1){
+            echo "*";  
+        }else if ($j==0 || $j==$width-1){
+            echo "*";
+        }else if ($j==$i || $j==($width-1-$i)){
+            echo "*";
+        
+            
+        }else{
+            echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
+?>
 
 
 
+<h2> 菱形對角線 </h2>
+ <?php 
 
+$size=21;
+for($i=0; $i<$size ; $i++){
+    if($i>(floor($size/2))){
+        $k1=$i-(floor($size/2));
+        $j1=2*($i-(2*($i-(floor($size/2)))))+1;
+    }else{
+        $k1=(floor($size/2))-$i;
+        $j1=(2*$i+1);
+    }
+        for($k=0; $k<$k1 ; $k++){
+            echo "&nbsp;";
+        }
+       
+        for($j=0; $j<$j1; $j++){
+            if($j==0 || $j==$j1-1 || $i==(floor($size/2) )|| $j==(($j1-1)/2)){
+                echo "*";
+            }else{
+                echo "&nbsp;";
+            }
+            
+        
+        }
+        echo "<br>";      
 
+    }
+?>
 
 
 
