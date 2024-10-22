@@ -12,6 +12,7 @@
 
 <style>
 /* 在這裡添加你的 CSS 樣式 */
+<table border="1">
 </style>
 
 <?php
@@ -41,6 +42,48 @@ foreach ($students as $student) {
 }
 ?>
 </table>
+
+<h2>利用程式來產生陣列</h2>
+
+<?php
+$n=[];
+for($i=1;$i<=9;$i++){
+    for ($j=1;$j<=9;$j++){
+        $nine[]="$i*$j=". ($i*$j);
+    }
+}
+
+$counter=0;
+foreach($nine as $idx => $n){
+  $counter++;
+  if($counter==9){
+    echo $n . "<br>";
+    $counter=0;
+  }else{
+    echo $n . ",";
+  }
+}
+        
+
+?>
+
+<?php
+echo "<table border='1'>";
+
+for($i=1;$i<=9;$i++){
+    echo "<tr>";
+    for ($j=1; $j<=9; $j++){
+        echo "<td>";
+        echo "$i*$j=";
+        echo $i*$j;
+        echo "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+
+?>
+
 
 
 </body>
